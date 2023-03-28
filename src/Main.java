@@ -36,7 +36,8 @@ public class Main {
         employeeBook.employeeDataDep(3);
         employeeBook.salaryLessThan(201000);
         employeeBook.salaryMoreThan(201000);
-        employeeBook.changeEmployee("Kary");
+        employeeBook.changeEmployeeSalary("Kary", 50000);
+        employeeBook.changeEmployeeDepartment("Kary", 2);
         employeeBook.employeeDataDep(2);
         employeeBook.informationEmployees();
         employeeBook.howManyDepartments();

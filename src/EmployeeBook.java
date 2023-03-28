@@ -45,43 +45,17 @@ public class EmployeeBook {
         }
     }
 
-    public void changeEmployee(String name) {
+    public void changeEmployeeSalary(String name, int newSalary) {
         for (Employee employee : repository) {
             if (employee.getNameEmployee().equals(name)) {
-                try {
-                    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                    System.out.println("Введите цифру 1 если хотите изменить зарплату сотрудника " + name
-                            + ", 2 если хотите изменить его отдел и 0 чтобы выйти из меню");
-
-                    int num = 3;
-                    while (num != 0) {
-                        num = Integer.parseInt(br.readLine());
-                        if (num == 1) {
-                            System.out.println("Введите новую зарплату сотрудника ");
-                            try {
-                                double newSalary = Double.parseDouble(br.readLine());
-                                employee.setSalary(newSalary);
-                            } catch (NumberFormatException ex){
-                                System.out.println("Необходимо ввести числовое значение");
-                            }
-                            break;
-                        } else if (num == 2) {
-                            System.out.println("Введите новый отдел сотрудника ");
-                            try{
-                                int newDepartment = Integer.parseInt(br.readLine());
-                                employee.setDepartment(newDepartment);
-                            } catch (NumberFormatException ex){
-                                System.out.println("Необходимо ввести числовое значение");
-                            }
-                            break;
-                        } else if (num != 0) {
-                            System.out.println("Введено неверное число");
-                            break;
-                        }
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+                employee.setSalary(newSalary);
+            }
+        }
+    }
+    public void changeEmployeeDepartment(String name, int newDepartment) {
+        for (Employee employee : repository) {
+            if (employee.getNameEmployee().equals(name)) {
+                employee.setDepartment(newDepartment);
             }
         }
     }
